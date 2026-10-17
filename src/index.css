@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+    --background: #f7f5f1;
+    --foreground: #1c1917;
+    --card: #fffcf8;
+    --card-foreground: #1c1917;
+    --popover: #fffcf8;
+    --popover-foreground: #1c1917;
+    --primary: #1f3d5c;
+    --primary-foreground: #f8fafc;
+    --secondary: #efe8dc;
+    --secondary-foreground: #1c1917;
+    --muted: #efeae2;
+    --muted-foreground: #57534e;
+    --accent: #0f766e;
+    --accent-foreground: #f0fdfa;
+    --destructive: #b42318;
+    --border: #e7e0d4;
+    --input: #e7e0d4;
+    --ring: #1f3d5c;
+    --success: #157a4b;
+    --warning: #b45309;
+  }
+
+  .dark {
+    --background: #121417;
+    --foreground: #ece7e1;
+    --card: #1a1e23;
+    --card-foreground: #ece7e1;
+    --popover: #1a1e23;
+    --popover-foreground: #ece7e1;
+    --primary: #9ec5e8;
+    --primary-foreground: #0f1720;
+    --secondary: #252a31;
+    --secondary-foreground: #ece7e1;
+    --muted: #22272e;
+    --muted-foreground: #a8a29a;
+    --accent: #2dd4bf;
+    --accent-foreground: #042f2e;
+    --destructive: #f87171;
+    --border: #2c333c;
+    --input: #2c333c;
+    --ring: #9ec5e8;
+    --success: #4ade80;
+    --warning: #fbbf24;
+  }
+}
+
+html, body {
+  height: 100%;
+  overscroll-behavior-y: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+}
+
+/* iOS Safe Area Inset Helpers */
+.pt-safe {
+  padding-top: max(1rem, env(safe-area-inset-top));
+}
+
+.pb-safe {
+  padding-bottom: max(1rem, env(safe-area-inset-bottom));
+}
+
+.pb-nav-safe {
+  padding-bottom: calc(4.5rem + env(safe-area-inset-bottom));
+}
+
+/* Custom scrollbars matching rom-latex */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
+
+/* Glassmorphism using theme tokens */
+.glass-panel {
+  background-color: var(--card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-card {
+  background-color: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Selection highlight matching rom-latex */
+::selection {
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+}

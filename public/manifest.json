@@ -1,0 +1,17 @@
+{
+  "name": "The Trading Book",
+  "short_name": "TradingBook",
+  "description": "Interactive trading handbook from beginner to advanced",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B0E14",
+  "theme_color": "#0B0E14",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
